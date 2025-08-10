@@ -8,7 +8,7 @@ map({ 'n', 'v', 'x' }, '<leader>S', ':sf #<CR>')
 
 
 map('n', '<leader>ff', ":Pick files<CR>")
-map('n', '<leader>fg', ":Pick live_grep<CR>")
+map('n', '<leader>fg', ":Pick grep_live<CR>")
 map('n', '<leader>fh', ":Pick help<CR>")
 
 map('n', '-', ":Oil<CR>")
