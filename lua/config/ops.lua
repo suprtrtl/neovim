@@ -15,3 +15,4 @@ vim.o.updatetime = 50
 vim.o.termguicolors = true
 
 vim.o.mouse = 'a'
+
