@@ -4,6 +4,7 @@ return {
 		require('mini.ai').setup()
 		require('mini.pick').setup()
 		require('mini.notify').setup()
+		require('mini.files').setup()
 		require('mini.extra').setup()
 		require('mini.clue').setup {
 			triggers = {
@@ -21,6 +22,13 @@ return {
 				require('mini.clue').gen_clues.windows({ submode_resize = true }),
 				require('mini.clue').gen_clues.builtin_completion(),
 				require('mini.clue').gen_clues.registers(),
+			},
+
+			window = {
+				delay = 100,
+				config = {
+					width = 'auto'
+				}
 			}
 
 		}

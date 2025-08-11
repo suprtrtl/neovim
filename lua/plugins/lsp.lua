@@ -9,28 +9,29 @@ return {
 
 	config = function ()
 local on_attach = function(_, bufnr)
-	local bufmap = function(keys, func)
-		vim.keymap.set('n', keys, func, { buffer = bufnr })
+	local bufmap = function(keys, func, desc)
+		desc = desc or 'todo'
+		vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
 	end
 
-	bufmap('<leader>ca', vim.lsp.buf.code_action)
-	bufmap('<leader>rn', vim.lsp.buf.rename)
+	bufmap('<leader>ca', vim.lsp.buf.code_action, 'code action')
+	bufmap('<leader>rn', vim.lsp.buf.rename, 'rename')
 
-	bufmap('gd', vim.lsp.buf.definition)
-	bufmap('gD', vim.lsp.buf.declaration)
-	bufmap('gI', vim.lsp.buf.implementation)
-	bufmap('<leader>D', vim.lsp.buf.type_definition)
+	bufmap('gd', vim.lsp.buf.definition, 'definition')
+	bufmap('gD', vim.lsp.buf.declaration, 'declaration')
+	bufmap('gI', vim.lsp.buf.implementation, 'implementation')
+	bufmap('<leader>D', vim.lsp.buf.type_definition, 'type definition')
 
-	bufmap('gr', ':Pick lsp scope="references"<CR>')
-	bufmap('<leader>ls', ':Pick lsp scope="document_symbol"<CR>')
-	bufmap('<leader>lS', ':Pick lsp scope="workspace_symbol"<CR>')
+	bufmap('gr', ':Pick lsp scope="references"<CR>', 'lsp references')
+	bufmap('<leader>ls', ':Pick lsp scope="document_symbol"<CR>', 'lsp symbols')
+	bufmap('<leader>lS', ':Pick lsp scope="workspace_symbol"<CR>', 'workspace symbols')
 
-	bufmap('<leader>K', vim.diagnostic.open_float)
-	bufmap('<leader>fd', ':Pick diagnostic<CR>')
+	bufmap('<leader>K', vim.diagnostic.open_float, 'diagnostics')
+	bufmap('<leader>fd', ':Pick diagnostic<CR>', 'find diagnostics')
 
-	bufmap('K', vim.lsp.buf.hover)
+	bufmap('K', vim.lsp.buf.hover, 'hover')
 
-	bufmap('<leader>fmt', vim.lsp.buf.format)
+	bufmap('<leader>fmt', vim.lsp.buf.format, 'format')
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -43,7 +44,7 @@ require('lspconfig').lua_ls.setup {
 	root_dir = function()
 		return vim.loop.cwd()
 	end,
-	cmd = { "lua-language-server" },
+	cmd = { 'lua-language-server' },
 	settings = {
 		Lua = {
 			workspace = { checkThirdParty = false },
@@ -64,24 +65,24 @@ require('lspconfig').bashls.setup {
 -- 	on_attach = on_attach,
 -- 	capabilities = capabilities,
 -- 	settings = {
--- 		["rust-analyzer"] = {
+-- 		['rust-analyzer'] = {
 -- 			cargo = {
 -- 				loadOutDirsFromCheck = true,
 -- 				runBuildScripts = true,
--- 				features = "all",
+-- 				features = 'all',
 -- 			},
 -- 			procMacro = {
 -- 				enable = true,
 -- 			},
 -- 			checkOnSave = {
--- 				command = "check"
+-- 				command = 'check'
 -- 			}
 -- 		}
 -- 	}
 -- }
 
 local inlayHints = {
-	includeInlayParameterNameHints = "all",
+	includeInlayParameterNameHints = 'all',
 	includeInlayParameterNameHintsWhenArgumentMatchesName = false,
 	includeInlayFunctionParameterTypeHints = true,
 	includeInlayVariableTypeHints = true,
