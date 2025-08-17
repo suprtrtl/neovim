@@ -1,5 +1,9 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
+	dependencies = {
+		"OXY2DEV/markview.nvim",
+	},
+	lazy = false,
 	build = function()
 		require("nvim-treesitter.install").update({ with_sync = true })()
 	end,
@@ -19,7 +23,9 @@ return {
 				"vimdoc",
 				"query",
 				"markdown",
-				"markdown_inline"
+				"markdown_inline",
+				"latex",
+				"typst",
 			},
 
 			-- Install parsers synchronously (only applied to `ensure_installed`)
@@ -37,5 +43,67 @@ return {
 			},
 
 		}
+
+		local markview = require('markview')
+		local presets = require('markview.presets')
+
+		markview.setup {
+			markdown = {
+				headings = presets.headings.glow,
+				horizontal_rules = presets.horizontal_rules.thin,
+				tables = presets.tables.rounded,
+
+				list_items = {
+					shift_width = function(buffer, item)
+						return 4;
+					end
+				}
+			},
+
+			modes = { "n", "c" },
+			hybrid_modes = { "n" },
+
+			callbacks = {
+				on_enable = function(_, win)
+					vim.wo[win].conceallevel = 2;
+					-- This will prevent Tree-sitter concealment being disabled on the cmdline mode
+					vim.wo[win].concealcursor = "c";
+				end
+			}
+
+		}
+
+		require("markview.extras.checkboxes").setup({
+			--- Default checkbox state(used when adding checkboxes).
+			---@type string
+			default = "X",
+
+			--- Changes how checkboxes are removed.
+			---@type
+			---| "disable" Disables the checkbox.
+			---| "checkbox" Removes the checkbox.
+			---| "list_item" Removes the list item markers too.
+			remove_style = "disable",
+
+			--- Various checkbox states.
+			---
+			--- States are in sets to quickly change between them
+			--- when there are a lot of states.
+			---@type string[][]
+			states = {
+				{ " ", "/", "X" },
+				{ "<", ">" },
+				{ "?", "!", "*" },
+				{ '"' },
+				{ "l", "b", "i" },
+				{ "S", "I" },
+				{ "p", "c" },
+				{ "f", "k", "w" },
+				{ "u", "d" }
+			}
+		})
+
+		require("markview.extras.headings").setup();
+		require("markview.extras.editor").setup();
 	end,
 }

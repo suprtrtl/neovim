@@ -16,3 +16,5 @@ vim.o.termguicolors = true
 
 vim.o.mouse = 'a'
 
+vim.o.concealcursor = "n"
+
