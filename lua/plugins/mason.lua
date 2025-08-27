@@ -1,4 +1,5 @@
-return { 
+if os.getenv('NIX_NEOVIM') ~= '1' then
+	return { 
 	"williamboman/mason.nvim",
 
 	dependencies = {
@@ -21,3 +22,6 @@ return {
         })
     end
 }
+else
+	return {}
+end
