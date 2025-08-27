@@ -50,6 +50,22 @@ return {
 		},
 		opts = {
 			workspaces = obsidian_vaults,
+
+            note_id_func = function(title)
+                if not title or title == "" then
+                    return tostring(os.time())
+                end
+
+                if title and string.find(title, "/") then
+                    local last_part = string.match(title, "([^/]+)$")
+                    if last_part and last_part ~= "" then
+                        return last_part
+                    end
+                end
+
+                return title
+            end,
+
 			ui = {
 				enable = false,
 			},
