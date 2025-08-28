@@ -51,21 +51,24 @@ return {
 		opts = {
 			workspaces = obsidian_vaults,
 
-			
-            note_id_func = function(title)
-				local suffix = ""
+
+			note_id_func = function(title)
 				local time = os.date("%Y%m%d%H%M", os.time())
-				if title ~= nil or title ~= "" then
-					suffix = string.gsub(title, " ", "-")
-					suffix = string.gsub(suffix, "[^A-Za-z0-9-]", "")
-					suffix = string.lower(suffix)
-
-					return tostring( time .. "-" .. suffix)
+				if title and title ~= "" then
+					local suffix = title
+						:gsub("%s+", "-") -- Replace spaces with dashes
+						:gsub("[^A-Za-z0-9-]", "") -- Remove special characters
+						:lower() -- Convert to lowercase
+					return time .. "-" .. suffix
 				else
-					return tostring(time)
+					return time
 				end
+			end,
 
-            end,
+			note_path_func = function(spec)
+				local path = spec.dir / tostring(spec.id)
+				return path:with_suffix(".md")
+			end,
 
 			ui = {
 				enable = false,
