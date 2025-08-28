@@ -51,19 +51,20 @@ return {
 		opts = {
 			workspaces = obsidian_vaults,
 
+			
             note_id_func = function(title)
-                if not title or title == "" then
-                    return tostring(os.time())
-                end
+				local suffix = ""
+				local time = os.date("%Y%m%d%H%M", os.time())
+				if title ~= nil or title ~= "" then
+					suffix = string.gsub(title, " ", "-")
+					suffix = string.gsub(suffix, "[^A-Za-z0-9-]", "")
+					suffix = string.lower(suffix)
 
-                if title and string.find(title, "/") then
-                    local last_part = string.match(title, "([^/]+)$")
-                    if last_part and last_part ~= "" then
-                        return last_part
-                    end
-                end
+					return tostring( time .. "-" .. suffix)
+				else
+					return tostring(time)
+				end
 
-                return title
             end,
 
 			ui = {
