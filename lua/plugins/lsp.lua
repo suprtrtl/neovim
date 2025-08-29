@@ -47,12 +47,13 @@ return {
 			bufmap('gI', vim.lsp.buf.implementation, 'implementation')
 			bufmap('<leader>D', vim.lsp.buf.type_definition, 'type definition')
 
-			bufmap('gr', ':Pick lsp scope="references"<CR>', 'lsp references')
-			bufmap('<leader>ls', ':Pick lsp scope="document_symbol"<CR>', 'lsp symbols')
-			bufmap('<leader>lS', ':Pick lsp scope="workspace_symbol"<CR>', 'workspace symbols')
+			local builtin = require('telescope.builtin')
+			bufmap('gr', builtin.lsp_references, 'lsp references')
+			bufmap('<leader>ls', builtin.lsp_document_symbols, 'lsp symbols')
+			bufmap('<leader>lS', builtin.lsp_workspace_symbols, 'workspace symbols')
 
 			bufmap('<leader>K', vim.diagnostic.open_float, 'diagnostics')
-			bufmap('<leader>fd', ':Pick diagnostic<CR>', 'find diagnostics')
+			bufmap('<leader>fd', builtin.diagnostics, 'find diagnostics')
 
 			bufmap('K', vim.lsp.buf.hover, 'hover')
 

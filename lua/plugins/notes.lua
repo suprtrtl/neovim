@@ -32,7 +32,6 @@ return {
 		"epwalsh/obsidian.nvim",
 		version = "*", -- recommended, use latest release instead of latest commit
 		lazy = true,
-		ft = { "markdown" },
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			-- {
@@ -50,6 +49,15 @@ return {
 		},
 		opts = {
 			workspaces = obsidian_vaults,
+
+			daily_notes = {
+				folder = "06-daily/2025",
+				defualt_tags = { "daily" },
+			},
+
+			templates = {
+				folder = "99-meta/templates",
+			},
 
 
 			note_id_func = function(title)
@@ -75,7 +83,7 @@ return {
 			},
 
 			picker = {
-				name = 'mini.pick',
+				name = 'telescope.nvim',
 			},
 		},
 	},
