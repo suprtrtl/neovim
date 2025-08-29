@@ -35,13 +35,6 @@ return {
 		ft = "markdown",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
-			{
-				"hisbaan/dataview.nvim",
-				opts = {
-					vault_dir = "~/notes/personal",
-					buffer_type = "float",
-				}
-			},
 		},
 		opts = {
 			workspaces = obsidian_vaults,
@@ -84,6 +77,16 @@ return {
 		},
 	},
 
+	{
+		"hisbaan/dataview.nvim",
+		event = {
+			"BufEnter " .. vim.fn.expand "~" .. "/notes/personal**",
+		},
+		opts = {
+			vault_dir = "~/notes/personal",
+			buffer_type = "float",
+		}
+	},
 	{
 		"jghauser/follow-md-links.nvim",
 		ft = "markdown",
