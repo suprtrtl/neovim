@@ -35,18 +35,13 @@ return {
 		ft = "markdown",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
-			-- {
-			-- 	"hisbaan/dataview.nvim",
-			-- 	opts = {
-			-- 		vault_dir = function()
-			-- 			local dirs = {}
-			-- 			for _, value in pairs(obsidian_vaults) do
-			-- 				table.insert(dirs, value.path)
-			-- 			end
-			-- 			return dirs
-			-- 		end,
-			-- 	}
-			-- },
+			{
+				"hisbaan/dataview.nvim",
+				opts = {
+					vault_dir = "~/notes/personal",
+					buffer_type = "float",
+				}
+			},
 		},
 		opts = {
 			workspaces = obsidian_vaults,
