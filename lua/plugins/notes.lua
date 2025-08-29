@@ -78,16 +78,6 @@ return {
 	},
 
 	{
-		"hisbaan/dataview.nvim",
-		event = {
-			"BufEnter " .. vim.fn.expand "~" .. "/notes/personal**",
-		},
-		opts = {
-			vault_dir = "~/notes/personal",
-			buffer_type = "float",
-		}
-	},
-	{
 		"jghauser/follow-md-links.nvim",
 		ft = "markdown",
 	},
