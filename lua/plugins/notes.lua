@@ -87,21 +87,6 @@ return {
 				name = 'telescope.nvim',
 			},
 		},
-
-		config = function ()
-			local keyset = vim.keymap.set
-			keyset('n', '<leader>ob', ':ObsidianBacklinks<CR>', { desc = "obsidian backlinks" })
-			keyset('n', '<leader>od', ':ObsidianDailies<CR>', { desc = "obsidian dailies" })
-			keyset('n', '<leader>ol', ':ObsidianLinks<CR>', { desc = "obsidian links" })
-			keyset('v', '<leader>ogl', ':ObsidianLink<CR>', { desc = "generate obsidian link" })
-			keyset('n', '<leader>on', ':ObsidianNew<CR>', { desc = "new obsidian" })
-			keyset('n', '<leader>oN', ':ObsidianNewFromTemplate<CR>', { desc = "new obsidian from template" })
-			keyset('n', '<leader>os', ':ObsidianQuickSwitch<CR>', { desc = "obsidian switch" })
-			keyset('n', '<leader>orn', ':ObsidianRename<CR>', { desc = "obsidian rename" })
-			keyset('n', '<leader>oS', ':ObsidianSearch<CR>', { desc = "obsidian search" })
-			keyset('n', '<leader>ot', ':ObsidianTags<CR>', { desc = "obsidian tag search" })
-			keyset('n', '<leader>oit', ':ObsidianTemplate<CR>', { desc = "obsidian insert template" })
-		end
 	},
 
 	{
