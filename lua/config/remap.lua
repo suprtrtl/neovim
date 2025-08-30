@@ -26,7 +26,7 @@ map('n', '<leader><F5>', ':UndotreeToggle<CR>', { desc = 'undotree' })
 
 
 -- Obsidian
-map('n', '<leader>oo', ':Obsidain<CR>', { desc = "obsidian" })
+map('n', '<leader>oo', ':Obsidian<CR>', { desc = "obsidian" })
 map('n', '<leader>ob', ':Obsidian backlinks<CR>', { desc = "obsidian backlinks" })
 map('n', '<leader>od', ':Obsidian dailies<CR>', { desc = "obsidian dailies" })
 map('n', '<leader>ol', ':Obsidian links<CR>', { desc = "obsidian links" })
