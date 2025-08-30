@@ -29,9 +29,8 @@ return {
 	},
 
 	{
-		"epwalsh/obsidian.nvim",
+		"obsidian-nvim/obsidian.nvim",
 		version = "*", -- recommended, use latest release instead of latest commit
-		lazy = true,
 		ft = "markdown",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
@@ -46,15 +45,15 @@ return {
 
 			templates = {
 				folder = "99-meta/templates",
-				substitutions = {
-					name = function ()
-						if note.title then
-							return note.title
-						else
-							return "temp name"
-						end
-					end,
-				}
+				-- substitutions = {
+				-- 	name = function ()
+				-- 		if note.title then
+				-- 			return note.title
+				-- 		else
+				-- 			return "temp name"
+				-- 		end
+				-- 	end,
+				-- }
 			},
 
 
