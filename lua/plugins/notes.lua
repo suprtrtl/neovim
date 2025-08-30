@@ -46,6 +46,15 @@ return {
 
 			templates = {
 				folder = "99-meta/templates",
+				substitutions = {
+					name = function ()
+						if note.title then
+							return note.title
+						else
+							return "temp name"
+						end
+					end,
+				}
 			},
 
 
