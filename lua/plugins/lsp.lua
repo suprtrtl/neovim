@@ -148,5 +148,12 @@ return {
 			capabilities = capabilities,
 		}
 		require('lspconfig').cssls.setup {}
+
+
+		require('java').setup {}
+		require('lspconfig').jdtls.setup {
+			on_attach = on_attach,
+			capabilities = capabilities,
+		}
 	end
 }
