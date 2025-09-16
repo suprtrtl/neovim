@@ -1,6 +1,6 @@
 require('config.lazy')
 
-require('config.ops')
+require('config.opts')
 require('config.remap')
 require('config.autocmd')
 

@@ -34,6 +34,8 @@ return {
 	},
 
 	config = function()
+
+
 		local on_attach = function(_, bufnr)
 			local bufmap = function(keys, func, desc)
 				desc = desc or 'todo'
@@ -59,6 +61,14 @@ return {
 			bufmap('K', vim.lsp.buf.hover, 'hover')
 
 			bufmap('<leader>fmt', vim.lsp.buf.format, 'format')
+
+			-- Language Specific
+			local ft = vim.api.nvim_buf_get_option(0, 'filetype')
+			if ft == 'java' then
+				bufmap('<leader><F10>', ':JavaRunnerRunMain<CR>', 'run')
+				bufmap('<leader>lb', ':JavaBuildBuildWorkspace<CR>', 'build')
+				bufmap('<leader>lc', ':JavaBuildCleanWorkspace<CR>', 'clean')
+			end
 		end
 
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -150,10 +160,22 @@ return {
 		require('lspconfig').cssls.setup {}
 
 
-		require('java').setup {}
+		require('java').setup {
+			java_test = {
+				version = "0.43.1",
+			},
+			spring_boot_tools = {
+				version = '1.59.0',
+			},
+		}
 		require('lspconfig').jdtls.setup {
 			on_attach = on_attach,
 			capabilities = capabilities,
+			handlers = {
+				-- By assigning an empty function, you can remove the notifications
+				-- printed to the cmd
+				["$/progress"] = function(_, result, ctx) end,
+			},
 		}
 	end
 }

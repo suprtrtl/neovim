@@ -19,6 +19,8 @@ return {
 				{ mode = 'n', keys = '<leader>f', desc = "find" },
 				{ mode = 'n', keys = '<leader>m', desc = "notes" },
 				{ mode = 'n', keys = '<leader>mv', desc = "markview" },
+				{ mode = 'n', keys = '<leader>l', desc = "lsp" },
+				{ mode = 'n', keys = '<leader>o', desc = "obsidian" },
 
 				require('mini.clue').gen_clues.g(),
 				require('mini.clue').gen_clues.z(),

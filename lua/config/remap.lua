@@ -4,6 +4,7 @@ local map = vim.keymap.set
 
 map({ 'n', 'v', 'x' }, '<leader>s', ':e #<CR>', { desc = "switch windows" })
 map('n', '<bs>', ':e #<CR>', { desc = "switch windows" })
+map('t', '<C-x>', '<C-\\><C-n><C-w>q', { desc = "exit terminal" })
 
 local builtin = require('telescope.builtin')
 map('n', '<leader>ff', builtin.find_files, { desc = "find files" })
