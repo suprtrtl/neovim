@@ -74,8 +74,8 @@ return {
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
 		capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
-		-- require('neodev').setup()
-		require('lspconfig').lua_ls.setup {
+		-- require('neodev'))()
+		vim.lsp.config(lua_ls) {
 			on_attach = on_attach,
 			capabilities = capabilities,
 			root_dir = function()
@@ -91,24 +91,24 @@ return {
 			}
 		}
 
-		require('lspconfig').bashls.setup {
+		vim.lsp.config(bashls) {
 			on_attach = on_attach,
 			capabilities = capabilities,
 			cmd = { 'bash-language-server', 'start' },
 			filetypes = { 'bash', 'sh' },
 		}
 
-		require('lspconfig').nixd.setup {
+		vim.lsp.config(nixd) {
 			on_attach = on_attach,
 			capabilities = capabilities,
 		}
 
-		require('lspconfig').hyprls.setup {
+		vim.lsp.config(hyprls) {
 			on_attach = on_attach,
 			capabilities = capabilities,
 		}
 
-		-- require('lspconfig').rust_analyzer.setup {
+		-- vim.lsp.config(rust_analyzer) {
 		-- 	on_attach = on_attach,
 		-- 	capabilities = capabilities,
 		-- 	settings = {
@@ -139,7 +139,7 @@ return {
 			includeInlayEnumMemberValueHints = true,
 		}
 
-		require('lspconfig').ts_ls.setup {
+		vim.lsp.config(ts_ls) {
 			on_attach = on_attach,
 			capabilities = capabilities,
 			filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact' },
@@ -153,11 +153,11 @@ return {
 			}
 		}
 
-		require('lspconfig').html.setup {
+		vim.lsp.config(html) {
 			on_attach = on_attach,
 			capabilities = capabilities,
 		}
-		require('lspconfig').cssls.setup {}
+		vim.lsp.config(cssls) {}
 
 
 		require('java').setup {
@@ -168,7 +168,7 @@ return {
 				version = '1.59.0',
 			},
 		}
-		require('lspconfig').jdtls.setup {
+		vim.lsp.config(jdtls) {
 			on_attach = on_attach,
 			capabilities = capabilities,
 			handlers = {
