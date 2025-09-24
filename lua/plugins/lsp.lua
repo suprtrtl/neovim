@@ -168,9 +168,10 @@ return {
 				version = '1.59.0',
 			},
 			jdk = {
-					auto_install = os.get_env('NIX_NEOVIM') == '1',
+				auto_install = false,
 			}
 		}
+
 		vim.lsp.config.jdtls = {
 			on_attach = on_attach,
 			capabilities = capabilities,
