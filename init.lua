@@ -1,6 +1,7 @@
 require('opts')
 require('autocommand')
 require('lsp')
+require('snip')
 
 vim.pack.add({
 	'https://github.com/olimorris/onedarkpro.nvim',
