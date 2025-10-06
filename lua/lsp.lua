@@ -77,7 +77,7 @@ vim.lsp.config("bashls", {
 	filetypes = { "bash", "sh" },
 })
 
-vim.lsp.config("nil_ls", {
+vim.lsp.config("nixd", {
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
