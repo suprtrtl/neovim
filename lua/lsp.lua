@@ -1,9 +1,9 @@
 vim.pack.add({
-	{ src = "https://github.com/neovim/nvim-lspconfig" },
-	{ src = "https://github.com/mason-org/mason.nvim" },
-	{ src = "https://github.com/mason-org/mason-lspconfig.nvim" },
-	{ src = "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim" },
-	{ src = "https://github.com/hrsh7th/cmp-nvim-lsp" },
+	'https://github.com/neovim/nvim-lspconfig',
+	'https://github.com/mason-org/mason.nvim',
+	'https://github.com/mason-org/mason-lspconfig.nvim',
+	'https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim',
+	'https://github.com/hrsh7th/cmp-nvim-lsp',
 })
 
 require("mason").setup()
@@ -13,6 +13,8 @@ require("mason-tool-installer").setup({
 		"lua_ls",
 	},
 })
+
+require('lsp.init')
 
 local on_attach = function(client, bufnr)
 	local bufmap = function(keys, func, desc)
@@ -135,19 +137,6 @@ vim.lsp.config("html", {
 })
 
 vim.lsp.config("cssls", {})
-
--- require('java').setup {
--- 	java_test = {
--- 		version = "0.43.1",
--- 	},
--- 	spring_boot_tools = {
--- 		version = '1.59.0',
--- 	},
--- 	jdk = {
--- 			auto_install = os.get_env('NIX_NEOVIM') == '1',
--- 		auto_install = false,
--- 	}
--- }
 
 vim.lsp.config("jdtls", {
 	on_attach = on_attach,
