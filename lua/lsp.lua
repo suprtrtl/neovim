@@ -69,6 +69,7 @@ vim.lsp.config("luals", {
 		},
 	},
 })
+vim.lsp.enable("luals", true)
 
 vim.lsp.config("bashls", {
 	on_attach = on_attach,
@@ -76,16 +77,19 @@ vim.lsp.config("bashls", {
 	cmd = { "bash-language-server", "start" },
 	filetypes = { "bash", "sh" },
 })
+vim.lsp.enable("bashls", true)
 
 vim.lsp.config("nixd", {
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
+vim.lsp.enable("nixd", true)
 
 vim.lsp.config("hyprls", {
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
+vim.lsp.enable("hyprls", true)
 
 -- vim.lsp.config.rust_analyzer) {
 -- 	on_attach = on_attach,
@@ -130,13 +134,16 @@ vim.lsp.config("ts_ls", {
 		},
 	},
 })
+vim.lsp.enable("ts_ls", true)
 
 vim.lsp.config("html", {
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
+vim.lsp.enable("html", true)
 
 vim.lsp.config("cssls", {})
+vim.lsp.enable("cssls", true)
 
 vim.lsp.config("jdtls", {
 	on_attach = on_attach,
@@ -147,3 +154,4 @@ vim.lsp.config("jdtls", {
 		["$/progress"] = function(_, result, ctx) end,
 	},
 })
+vim.lsp.enable("jdtls", true)
