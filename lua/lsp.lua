@@ -69,7 +69,6 @@ vim.lsp.config("luals", {
 		},
 	},
 })
-vim.lsp.enable("luals", true)
 
 vim.lsp.config("bashls", {
 	on_attach = on_attach,
@@ -141,6 +140,12 @@ vim.lsp.config("html", {
 	capabilities = capabilities,
 })
 vim.lsp.enable("html", true)
+
+vim.lsp.config("jedi-language-server", {
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+vim.lsp.enable("jedi-language-server", true)
 
 vim.lsp.config("cssls", {})
 vim.lsp.enable("cssls", true)
