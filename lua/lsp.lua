@@ -141,11 +141,11 @@ vim.lsp.config("html", {
 })
 vim.lsp.enable("html", true)
 
-vim.lsp.config("jedi-language-server", {
+vim.lsp.config("python-lsp-server", {
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
-vim.lsp.enable("jedi-language-server", true)
+vim.lsp.enable("python-lsp-server", true)
 
 vim.lsp.config("cssls", {})
 vim.lsp.enable("cssls", true)
