@@ -141,11 +141,11 @@ vim.lsp.config("html", {
 })
 vim.lsp.enable("html", true)
 
-vim.lsp.config("python-lsp-server", {
+vim.lsp.config("pylsp", {
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
-vim.lsp.enable("python-lsp-server", true)
+vim.lsp.enable("pylsp", true)
 
 vim.lsp.config("cssls", {})
 vim.lsp.enable("cssls", true)
