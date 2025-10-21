@@ -144,6 +144,27 @@ vim.lsp.enable("html", true)
 vim.lsp.config("pylsp", {
 	on_attach = on_attach,
 	capabilities = capabilities,
+	settings = {
+		pylsp = {
+			plugins = {
+				flake8 = {
+					enabled = true
+				},
+				pylint = {
+					enabled = true
+				},
+				rope_autoimport = {
+					enabled = true
+				},
+				rope_completion = {
+					enabled = true
+				},
+				yapf = {
+					enabled = true
+				},
+			}
+		}
+	}
 })
 vim.lsp.enable("pylsp", true)
 
