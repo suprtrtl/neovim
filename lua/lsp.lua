@@ -141,34 +141,11 @@ vim.lsp.config("html", {
 })
 vim.lsp.enable("html", true)
 
-vim.lsp.config("pylsp", {
+vim.lsp.config("jedi_language_server", {
 	on_attach = on_attach,
 	capabilities = capabilities,
-	settings = {
-		pylsp = {
-			plugins = {
-				flake8 = {
-					enabled = true
-				},
-				pylint = {
-					enabled = true
-				},
-				rope_autoimport = {
-					enabled = true
-				},
-				rope_completion = {
-					enabled = true
-				},
-				yapf = {
-					enabled = true
-				},
-			},
-
-			configurationSources = {"flake8"},
-		}
-	}
 })
-vim.lsp.enable("pylsp", true)
+vim.lsp.enable("jedi_language_server", true)
 
 vim.lsp.config("cssls", {})
 vim.lsp.enable("cssls", true)
