@@ -162,7 +162,9 @@ vim.lsp.config("pylsp", {
 				yapf = {
 					enabled = true
 				},
-			}
+			},
+
+			configurationSources = {"flake8"},
 		}
 	}
 })
