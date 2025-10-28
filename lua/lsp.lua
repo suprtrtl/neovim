@@ -160,3 +160,12 @@ vim.lsp.config("jdtls", {
 	},
 })
 vim.lsp.enable("jdtls", true)
+
+local esp32 = require('esp32')
+
+vim.lsp.config("clangd", esp32.lsp_config())
+vim.lsp.config("clangd", {
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+vim.lsp.enable("clangd", true)
