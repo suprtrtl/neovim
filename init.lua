@@ -1,6 +1,5 @@
 require('opts')
 require('autocommand')
-require('lsp')
 require('snip')
 
 vim.pack.add({
@@ -17,11 +16,13 @@ vim.pack.add({
 	'https://github.com/OXY2DEV/markview.nvim',
 })
 
+require('lsp')
+
 require('remap')
 
 vim.cmd('colorscheme onedark')
 require("nvim-treesitter.install").update({ with_sync = true })()
 
-require('plugins.init')
 
+require('plugins.init')
 
