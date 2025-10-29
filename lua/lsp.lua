@@ -161,6 +161,7 @@ vim.lsp.config("jdtls", {
 })
 vim.lsp.enable("jdtls", true)
 
+
 local esp32 = require('esp32')
 
 vim.lsp.config("clangd", esp32.lsp_config())
@@ -168,4 +169,31 @@ vim.lsp.config("clangd", {
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
+
+local esp_idf_path = os.getenv("IDF_PATH")
+
+local clangd_nix = os.getenv("CLANGD_IDF_PATH")
+if esp_idf_path then
+	-- for esp-idf
+	vim.lsp.config("clangd", {
+		-- handlers = handlers,
+		on_attach = on_attach,
+		capabilities = capabilities,
+		cmd = { clangd_nix, "--background-index", "--query-driver=**" },
+		root_dir = function()
+			-- leave empty to stop nvim from cd'ing into ~/ due to global .clangd file
+		end,
+	})
+else
+	-- clangd config
+	vim.lsp.config("clangd", {
+		-- cmd = { 'clangd', "--background-index", "--clang-tidy"},
+		handlers = {
+			["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+				disable = { "cpp copyright" },
+			}),
+		},
+	})
+end
+
 vim.lsp.enable("clangd", true)
