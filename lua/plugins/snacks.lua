@@ -16,5 +16,6 @@ bigfile = { enabled = true },
 		scope = { enabled = true },
 		scroll = { enabled = false },
 		statuscolumn = { enabled = true },
+		terminal = { enabled = true },
 		words = { enabled = true },
 	}
