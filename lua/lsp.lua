@@ -69,6 +69,7 @@ vim.lsp.config("luals", {
 		},
 	},
 })
+vim.lsp.enable("luals", true)
 
 vim.lsp.config("bashls", {
 	on_attach = on_attach,
