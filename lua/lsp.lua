@@ -54,7 +54,7 @@ capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
 -- require('neodev'))()
 
-vim.lsp.config("luals", {
+vim.lsp.config("lua_ls", {
 	on_attach = on_attach,
 	capabilities = capabilities,
 	root_dir = function()
@@ -69,7 +69,7 @@ vim.lsp.config("luals", {
 		},
 	},
 })
-vim.lsp.enable("luals", true)
+vim.lsp.enable("lua_ls", true)
 
 vim.lsp.config("bashls", {
 	on_attach = on_attach,
