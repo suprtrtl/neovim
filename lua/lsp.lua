@@ -57,9 +57,6 @@ capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 vim.lsp.config("lua_ls", {
 	on_attach = on_attach,
 	capabilities = capabilities,
-	root_dir = function()
-		return vim.loop.cwd()
-	end,
 	cmd = { "lua-language-server" },
 	settings = {
 		Lua = {
