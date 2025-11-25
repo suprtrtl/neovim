@@ -1,3 +1,5 @@
+vim.env.NVIM_PACK_LOCKFILE = vim.fn.stdpath("state") .. "/nvim-pack-lock.json"
+
 require('opts')
 require('autocommand')
 require('snip')
