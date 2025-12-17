@@ -13,7 +13,7 @@ return {
 -- 	'https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim',
 -- 	'https://github.com/hrsh7th/cmp-nvim-lsp',
 -- })
-	config = function() {
+	config = function()
 
 require("mason").setup()
 require("mason-lspconfig").setup()
@@ -172,5 +172,5 @@ vim.lsp.config("clangd", {
 })
 
 vim.lsp.enable("clangd", true)
-}
+end
 }
