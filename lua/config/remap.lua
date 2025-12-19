@@ -25,6 +25,9 @@ map('n', '<leader>mvs', ':Markview splitToggle<CR>', { desc = 'split toggle' })
 -- -- Undotree
 map('n', '<leader><F5>', ':UndotreeToggle<CR>', { desc = 'undotree' })
 
+-- Snacks
+map('n', '<leader>!', 'lua Snacks.terminal()', { desc = 'open terminal window' })
+
 
 -- Obsidian
 map('n', '<leader>oo', ':Obsidian<CR>', { desc = "obsidian" })

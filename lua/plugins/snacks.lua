@@ -15,7 +15,7 @@ return {
 			},
 		},
 		input = { enabled = true },
-		picker = { enabled = true },
+		picker = { enabled = false },
 		notifier = { enabled = true },
 		quickfile = { enabled = true },
 		scope = { enabled = true },
@@ -23,5 +23,8 @@ return {
 		statuscolumn = { enabled = true },
 		terminal = { enabled = true },
 		words = { enabled = true },
+	},
+	keys = {
+		{ "<c-/>",      function() Snacks.terminal() end, desc = "Toggle Terminal" },
 	},
 }
