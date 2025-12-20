@@ -174,21 +174,21 @@ return {
 			vim.lsp.enable("clangd", true)
 		end
 	},
-	{
-		'nvim-java/nvim-java',
-		config = function()
-			require('java').setup {
-				java_test = {
-					version = "0.43.1",
-				},
-				spring_boot_tools = {
-					version = '1.59.0',
-				},
-				jdk = {
-					-- auto_install = os.get_env('NIX_NEOVIM') == '1',
-					auto_install = false,
-				}
-			}
-		end
-	}
+	-- {
+	-- 	'nvim-java/nvim-java',
+	-- 	config = function()
+	-- 		require('java').setup {
+	-- 			java_test = {
+	-- 				version = "0.43.1",
+	-- 			},
+	-- 			spring_boot_tools = {
+	-- 				version = '1.59.0',
+	-- 			},
+	-- 			jdk = {
+	-- 				-- auto_install = os.get_env('NIX_NEOVIM') == '1',
+	-- 				auto_install = false,
+	-- 			}
+	-- 		}
+	-- 	end
+	-- }
 }
