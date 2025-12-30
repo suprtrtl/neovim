@@ -172,6 +172,8 @@ return {
 			})
 
 			vim.lsp.enable("clangd", true)
+
+			vim.lsp.enable("qmlls", true)
 		end
 	},
 	-- {
