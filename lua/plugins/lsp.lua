@@ -175,11 +175,11 @@ return {
 
 			vim.lsp.enable("qmlls", true)
 
-			vim.lsp.config("zigls", {
+			vim.lsp.config("zls", {
 				on_attach = on_attach,
 				capabilities = capabilities,
 			})
-			vim.lsp.enable("zigls", true)
+			vim.lsp.enable("zls", true)
 		end
 	},
 	-- {
