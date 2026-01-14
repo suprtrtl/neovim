@@ -18,6 +18,8 @@ vim.o.mouse = 'a'
 
 vim.o.concealcursor = "n"
 
+vim.o.relativenumber = true
+
 vim.diagnostic.enable = true
 vim.diagnostic.config {
 	virtual_text = {
