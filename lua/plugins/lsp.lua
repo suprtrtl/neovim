@@ -174,6 +174,12 @@ return {
 			vim.lsp.enable("clangd", true)
 
 			vim.lsp.enable("qmlls", true)
+
+			vim.lsp.config("zigls", {
+				on_attach = on_attach,
+				capabilities = capabilities,
+			})
+			vim.lsp.enable("zigls", true)
 		end
 	},
 	-- {
