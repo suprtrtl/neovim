@@ -20,6 +20,8 @@ vim.o.concealcursor = "n"
 
 vim.o.relativenumber = true
 
+vim.o.winborder = 'rounded'
+
 vim.diagnostic.enable = true
 vim.diagnostic.config {
 	virtual_text = {
@@ -34,3 +36,5 @@ vim.diagnostic.config {
 		},
 	},
 }
+
+vim.cmd.filetype("plugin indent on")
