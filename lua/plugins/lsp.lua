@@ -23,6 +23,7 @@ return {
 				},
 			})
 
+
 			-- Specify how the border looks like
 			local border = {
 				{ '┌', 'FloatBorder' },
