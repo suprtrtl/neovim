@@ -13,7 +13,6 @@ return {
 		require('luasnip.loaders.from_vscode').lazy_load()
 		luasnip.config.setup {}
 
-
 		local kind_icons = {
 			Text = "",
 			Method = "󰆧",
@@ -51,9 +50,11 @@ return {
 
 			window = {
 				completion = cmp.config.window.bordered({
+					border = "single";
 					winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
 				}),
 				documentation = cmp.config.window.bordered({
+					border = "single";
 					winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,Search:None",
 				}),
 			},
