@@ -22,19 +22,4 @@ vim.o.relativenumber = true
 
 vim.o.winborder = 'rounded'
 
-vim.diagnostic.enable = true
-vim.diagnostic.config {
-	virtual_text = {
-		prefix = "●",
-	},
-	signs = {
-		text = {
-			[vim.diagnostic.severity.ERROR] = " ",
-			[vim.diagnostic.severity.WARN] = " ",
-			[vim.diagnostic.severity.HINT] = "󰌵 ",
-			[vim.diagnostic.severity.INFO] = "󰋼 ",
-		},
-	},
-}
-
 vim.cmd.filetype("plugin indent on")

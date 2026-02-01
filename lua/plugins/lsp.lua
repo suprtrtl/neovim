@@ -23,6 +23,39 @@ return {
 				},
 			})
 
+			-- Specify how the border looks like
+			local border = {
+				{ '┌', 'FloatBorder' },
+				{ '─', 'FloatBorder' },
+				{ '┐', 'FloatBorder' },
+				{ '│', 'FloatBorder' },
+				{ '┘', 'FloatBorder' },
+				{ '─', 'FloatBorder' },
+				{ '└', 'FloatBorder' },
+				{ '│', 'FloatBorder' },
+			}
+
+			local handlers = {
+				['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
+				['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
+			}
+
+			vim.diagnostic.enable = true
+			vim.diagnostic.config {
+				virtual_text = {
+					prefix = "●",
+				},
+				float = { border = border },
+				signs = {
+					text = {
+						[vim.diagnostic.severity.ERROR] = " ",
+						[vim.diagnostic.severity.WARN] = " ",
+						[vim.diagnostic.severity.HINT] = "󰌵 ",
+						[vim.diagnostic.severity.INFO] = "󰋼 ",
+					},
+				},
+			}
+
 			local on_attach = function(client, bufnr)
 				local bufmap = function(keys, func, desc)
 					desc = desc or "todo"
@@ -34,7 +67,10 @@ return {
 				bufmap("gd", vim.lsp.buf.definition, "definition")
 				bufmap("gD", vim.lsp.buf.declaration, "declaration")
 				bufmap("gI", vim.lsp.buf.implementation, "implementation")
-				bufmap("<leader>D", vim.lsp.buf.type_definition, "type definition")
+				bufmap("<leader>ld", vim.lsp.buf.definition, "definition")
+				bufmap("<leader>lD", vim.lsp.buf.declaration, "declaration")
+				bufmap("<leader>lI", vim.lsp.buf.implementation, "implementation")
+				bufmap("<leader>ltd", vim.lsp.buf.type_definition, "type definition")
 
 				local builtin = require("telescope.builtin")
 				bufmap("gr", builtin.lsp_references, "lsp references")
@@ -64,6 +100,7 @@ return {
 			vim.lsp.config("lua_ls", {
 				on_attach = on_attach,
 				capabilities = capabilities,
+				handlers = handlers,
 				cmd = { "lua-language-server" },
 				settings = {
 					Lua = {
@@ -78,6 +115,7 @@ return {
 			vim.lsp.config("bashls", {
 				on_attach = on_attach,
 				capabilities = capabilities,
+				handlers = handlers,
 				cmd = { "bash-language-server", "start" },
 				filetypes = { "bash", "sh" },
 			})
@@ -86,18 +124,21 @@ return {
 			vim.lsp.config("nixd", {
 				on_attach = on_attach,
 				capabilities = capabilities,
+				handlers = handlers,
 			})
 			vim.lsp.enable("nixd", true)
 
 			vim.lsp.config("hyprls", {
 				on_attach = on_attach,
 				capabilities = capabilities,
+				handlers = handlers,
 			})
 			vim.lsp.enable("hyprls", true)
 
 			-- vim.lsp.config.rust_analyzer) {
 			-- 	on_attach = on_attach,
 			-- 	capabilities = capabilities,
+				handlers = handlers,
 			-- 	settings = {
 			-- 		['rust-analyzer'] = {
 			-- 			cargo = {
@@ -128,6 +169,7 @@ return {
 			vim.lsp.config("ts_ls", {
 				on_attach = on_attach,
 				capabilities = capabilities,
+				handlers = handlers,
 				filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
 				settings = {
 					typescript = {
@@ -143,12 +185,14 @@ return {
 			vim.lsp.config("html", {
 				on_attach = on_attach,
 				capabilities = capabilities,
+				handlers = handlers,
 			})
 			vim.lsp.enable("html", true)
 
 			vim.lsp.config("jedi_language_server", {
 				on_attach = on_attach,
 				capabilities = capabilities,
+				handlers = handlers,
 			})
 			vim.lsp.enable("jedi_language_server", true)
 
@@ -158,6 +202,7 @@ return {
 			vim.lsp.config("jdtls", {
 				on_attach = on_attach,
 				capabilities = capabilities,
+				handlers = handlers,
 				handlers = {
 					-- By assigning an empty function, you can remove the notifications
 					-- printed to the cmd
@@ -169,6 +214,7 @@ return {
 			vim.lsp.config("clangd", {
 				on_attach = on_attach,
 				capabilities = capabilities,
+				handlers = handlers,
 			})
 
 			vim.lsp.enable("clangd", true)
@@ -178,6 +224,7 @@ return {
 			vim.lsp.config("zls", {
 				on_attach = on_attach,
 				capabilities = capabilities,
+				handlers = handlers,
 			})
 			vim.lsp.enable("zls", true)
 		end

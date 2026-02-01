@@ -26,47 +26,47 @@ return {
 			highlight = { enable = true },
 		}
 
-		local markview = require("markview")
-		local presets = require("markview.presets")
-
-		markview.setup {
-			markdown = {
-				headings = presets.headings.glow,
-				horizontal_rules = presets.horizontal_rules.thin,
-				tables = presets.tables.rounded,
-				list_items = {
-					shift_width = function(_, _)
-						return 4
-					end,
-				},
-			},
-			modes = { "n", "c" },
-			hybrid_modes = { "n" },
-			callbacks = {
-				on_enable = function(_, win)
-					vim.wo[win].conceallevel = 2
-					vim.wo[win].concealcursor = "c"
-				end,
-			},
-		}
-
-		require("markview.extras.checkboxes").setup({
-			default = "X",
-			remove_style = "disable",
-			states = {
-				{ " ", "/", "X" },
-				{ "<", ">" },
-				{ "?", "!", "*" },
-				{ '"' },
-				{ "l", "b", "i" },
-				{ "S", "I" },
-				{ "p", "c" },
-				{ "f", "k", "w" },
-				{ "u", "d" },
-			},
-		})
-		require("markview.extras.headings").setup()
-		require("markview.extras.editor").setup()
+		-- local markview = require("markview")
+		-- local presets = require("markview.presets")
+		--
+		-- markview.setup {
+		-- 	markdown = {
+		-- 		headings = presets.headings.glow,
+		-- 		horizontal_rules = presets.horizontal_rules.thin,
+		-- 		tables = presets.tables.rounded,
+		-- 		list_items = {
+		-- 			shift_width = function(_, _)
+		-- 				return 4
+		-- 			end,
+		-- 		},
+		-- 	},
+		-- 	modes = { "n", "c" },
+		-- 	hybrid_modes = { "n" },
+		-- 	callbacks = {
+		-- 		on_enable = function(_, win)
+		-- 			vim.wo[win].conceallevel = 2
+		-- 			vim.wo[win].concealcursor = "c"
+		-- 		end,
+		-- 	},
+		-- }
+		--
+		-- require("markview.extras.checkboxes").setup({
+		-- 	default = "X",
+		-- 	remove_style = "disable",
+		-- 	states = {
+		-- 		{ " ", "/", "X" },
+		-- 		{ "<", ">" },
+		-- 		{ "?", "!", "*" },
+		-- 		{ '"' },
+		-- 		{ "l", "b", "i" },
+		-- 		{ "S", "I" },
+		-- 		{ "p", "c" },
+		-- 		{ "f", "k", "w" },
+		-- 		{ "u", "d" },
+		-- 	},
+		-- })
+		-- require("markview.extras.headings").setup()
+		-- require("markview.extras.editor").setup()
 	end,
 }
 
