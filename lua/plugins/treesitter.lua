@@ -4,27 +4,27 @@ return {
 	build = ":TSUpdate",
 	lazy = false,
 	config = function()
-		require("nvim-treesitter.configs").setup {
-			ensure_installed = {
-				"rust",
-				"go",
-				"c",
-				"zig",
-				"javascript",
-				"typescript",
-				"lua",
-				"vim",
-				"vimdoc",
-				"query",
-				"markdown",
-				"markdown_inline",
-				"latex",
-				"typst",
-			},
-			sync_install = false,
-			auto_install = true,
-			highlight = { enable = true },
-		}
+		-- require("nvim-treesitter.configs").setup {
+		-- 	ensure_installed = {
+		-- 		"rust",
+		-- 		"go",
+		-- 		"c",
+		-- 		"zig",
+		-- 		"javascript",
+		-- 		"typescript",
+		-- 		"lua",
+		-- 		"vim",
+		-- 		"vimdoc",
+		-- 		"query",
+		-- 		"markdown",
+		-- 		"markdown_inline",
+		-- 		"latex",
+		-- 		"typst",
+		-- 	},
+		-- 	sync_install = false,
+		-- 	auto_install = true,
+		-- 	highlight = { enable = true },
+		-- }
 
 		-- local markview = require("markview")
 		-- local presets = require("markview.presets")
