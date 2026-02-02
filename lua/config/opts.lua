@@ -22,4 +22,6 @@ vim.o.relativenumber = true
 
 vim.o.winborder = 'rounded'
 
+vim.o.smartcase = true
+
 vim.cmd.filetype("plugin indent on")

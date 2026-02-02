@@ -4,6 +4,11 @@ return {
 
 		'L3MON4D3/LuaSnip',
 		'saadparwaiz1/cmp_luasnip',
+
+		'hrsh7th/cmp-buffer',
+		'hrsh7th/cmp-path',
+		'hrsh7th/cmp-cmdline',
+		'hrsh7th/cmp-calc',
 	},
 
 	config = function()
@@ -50,11 +55,11 @@ return {
 
 			window = {
 				completion = cmp.config.window.bordered({
-					border = "single";
+					border = "single",
 					winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
 				}),
 				documentation = cmp.config.window.bordered({
-					border = "single";
+					border = "single",
 					winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,Search:None",
 				}),
 			},
@@ -106,7 +111,27 @@ return {
 			sources = {
 				{ name = 'nvim_lsp' },
 				{ name = 'luasnip' },
+				{ name = 'buffer' },
+				{ name = 'calc' },
+
 			},
 		}
+
+		cmp.setup.cmdline({ '/', '?' }, {
+			mapping = cmp.mapping.preset.cmdline(),
+			sources = {
+				{ name = 'buffer' }
+			}
+		})
+
+		cmp.setup.cmdline(':', {
+			mapping = cmp.mapping.preset.cmdline(),
+			sources = cmp.config.sources({
+				{ name = 'path' }
+			}, {
+				{name = 'cmdline' }
+			}),
+			matching = { disallow_symbol_nonprefix_matching = false }
+		})
 	end
 }
