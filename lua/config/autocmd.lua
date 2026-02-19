@@ -6,5 +6,6 @@ vim.api.nvim_create_autocmd("Filetype", {
 		end, 50)
 		vim.o.spelllang = "en_ca"
 		vim.o.spell = true
+		vim.o.wrap = true
 	end
 })
