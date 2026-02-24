@@ -27,4 +27,7 @@ vim.o.smartcase = true
 vim.o.foldmethod = 'indent'
 vim.o.foldminlines = 128;
 
+vim.o.undofile = true
+vim.o.swapfile = false
+
 vim.cmd.filetype("plugin indent on")
