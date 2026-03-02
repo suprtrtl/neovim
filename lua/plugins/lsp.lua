@@ -228,6 +228,13 @@ return {
 				handlers = handlers,
 			})
 			vim.lsp.enable("zls", true)
+
+			vim.lsp.config("gopls", {
+				on_attach = on_attach,
+				capabilities = capabilities,
+				handlers = handlers,
+			})
+			vim.lsp.enable("gopls", true)
 		end
 	},
 	-- {
