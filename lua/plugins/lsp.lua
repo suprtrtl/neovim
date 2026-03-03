@@ -6,6 +6,7 @@ return {
 			'mason-org/mason-lspconfig.nvim',
 			'WhoIsSethDaniel/mason-tool-installer.nvim',
 			'hrsh7th/cmp-nvim-lsp',
+			'MysticalDevil/inlay-hints.nvim',
 		},
 		-- vim.pack.add({
 		-- 	'https://github.com/neovim/nvim-lspconfig',
@@ -21,6 +22,11 @@ return {
 				ensure_installed = {
 					"lua_ls",
 				},
+			})
+
+			require("inlay-hints").setup({
+				commands = { enable = true }, -- Enable commands: InlayHintsToggle, InlayHintsEnable, InlayHintsDisable
+				autocmd = { enable = true }, -- Auto-enable inlay hints on LspAttach
 			})
 
 
@@ -139,7 +145,7 @@ return {
 			-- vim.lsp.config.rust_analyzer) {
 			-- 	on_attach = on_attach,
 			-- 	capabilities = capabilities,
-				-- handlers = handlers,
+			-- handlers = handlers,
 			-- 	settings = {
 			-- 		['rust-analyzer'] = {
 			-- 			cargo = {
@@ -235,7 +241,14 @@ return {
 				handlers = handlers,
 				settings = {
 					gopls = {
-						semanticTokens = true
+						semanticTokens = true,
+						hints = {
+							rangeVariableTypes = true,
+							parameterNames = true,
+							assignVariableTypes = true,
+							compositeLiteralTypes = true,
+							functionTypeParameters = true,
+						}
 					}
 				}
 			})
