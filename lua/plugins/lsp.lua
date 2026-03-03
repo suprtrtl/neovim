@@ -233,6 +233,11 @@ return {
 				on_attach = on_attach,
 				capabilities = capabilities,
 				handlers = handlers,
+				settings = {
+					gopls = {
+						semanticTokens = true
+					}
+				}
 			})
 			vim.lsp.enable("gopls", true)
 		end
