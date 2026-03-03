@@ -6,7 +6,7 @@ return {
 			'mason-org/mason-lspconfig.nvim',
 			'WhoIsSethDaniel/mason-tool-installer.nvim',
 			'hrsh7th/cmp-nvim-lsp',
-			'MysticalDevil/inlay-hints.nvim',
+			-- 'MysticalDevil/inlay-hints.nvim',
 		},
 		-- vim.pack.add({
 		-- 	'https://github.com/neovim/nvim-lspconfig',
@@ -242,13 +242,13 @@ return {
 				settings = {
 					gopls = {
 						semanticTokens = true,
-						hints = {
-							rangeVariableTypes = true,
-							parameterNames = true,
-							assignVariableTypes = true,
-							compositeLiteralTypes = true,
-							functionTypeParameters = true,
-						}
+						-- hints = {
+						-- 	rangeVariableTypes = true,
+						-- 	parameterNames = true,
+						-- 	assignVariableTypes = true,
+						-- 	compositeLiteralTypes = true,
+						-- 	functionTypeParameters = true,
+						-- }
 					}
 				}
 			})
