@@ -24,10 +24,10 @@ return {
 				},
 			})
 
-			require("inlay-hints").setup({
-				commands = { enable = true }, -- Enable commands: InlayHintsToggle, InlayHintsEnable, InlayHintsDisable
-				autocmd = { enable = true }, -- Auto-enable inlay hints on LspAttach
-			})
+			-- require("inlay-hints").setup({
+			-- 	commands = { enable = true }, -- Enable commands: InlayHintsToggle, InlayHintsEnable, InlayHintsDisable
+			-- 	autocmd = { enable = true }, -- Auto-enable inlay hints on LspAttach
+			-- })
 
 
 			-- Specify how the border looks like
