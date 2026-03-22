@@ -222,6 +222,10 @@ return {
 				on_attach = on_attach,
 				capabilities = capabilities,
 				handlers = handlers,
+				cmd = {
+					"clangd",
+					"--query-driver=/nix/store/*-clang-wrapper-*/bin/clang"
+				}
 			})
 
 			vim.lsp.enable("clangd", true)
