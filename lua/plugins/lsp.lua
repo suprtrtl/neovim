@@ -257,6 +257,14 @@ return {
 				}
 			})
 			vim.lsp.enable("gopls", true)
+
+			vim.lsp.config("ols", {
+				on_attach = on_attach,
+				capabilities = capabilities,
+				handlers = handlers,
+			})
+
+			vim.lsp.enable("ols", true)
 		end
 	},
 	-- {
