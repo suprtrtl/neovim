@@ -258,14 +258,16 @@ return {
 			})
 			vim.lsp.enable("gopls", true)
 
+			local odin_dir = os.getenv("ODIN_DIR")
+
 			vim.lsp.config("ols", {
 				on_attach = on_attach,
 				capabilities = capabilities,
 				handlers = handlers,
 				init_options = {
 					collections = {
-						{ name = "core",   path = "/nix/store/*-odin-*/share/core" },
-						{ name = "vendor", path = "/nix/store/*-odin-*/share/vendor" },
+						{ name = "core",   path = odin_dir .. "/share/core" },
+						{ name = "vendor", path = odin_dir .. "/share/vendor" },
 					},
 					enable_document_symbols = true,
 					enable_hover = true,
