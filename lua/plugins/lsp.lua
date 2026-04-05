@@ -262,6 +262,12 @@ return {
 				on_attach = on_attach,
 				capabilities = capabilities,
 				handlers = handlers,
+				init_options = {
+					collections = {
+						{ name = "core", path = "/nix/store/*-odin-*/share/core" },
+						{ name = "vendor", path = "/nix/store/*-odin-*/share/vendor" },
+					},
+				},
 			})
 
 			vim.lsp.enable("ols", true)
