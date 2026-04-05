@@ -260,23 +260,25 @@ return {
 
 			local odin_dir = os.getenv("ODIN_DIR")
 
-			vim.lsp.config("ols", {
-				on_attach = on_attach,
-				capabilities = capabilities,
-				handlers = handlers,
-				init_options = {
-					collections = {
-						{ name = "core",   path = odin_dir .. "/share/core" },
-						{ name = "vendor", path = odin_dir .. "/share/vendor" },
+			if odin_dir ~= nil then
+				vim.lsp.config("ols", {
+					on_attach = on_attach,
+					capabilities = capabilities,
+					handlers = handlers,
+					init_options = {
+						collections = {
+							{ name = "core",   path = odin_dir .. "/share/core" },
+							{ name = "vendor", path = odin_dir .. "/share/vendor" },
+						},
+						enable_document_symbols = true,
+						enable_hover = true,
+						enable_snippets = true,
+						enable_semantic_tokens = false,
 					},
-					enable_document_symbols = true,
-					enable_hover = true,
-					enable_snippets = true,
-					enable_semantic_tokens = false,
-				},
-			})
+				})
 
-			vim.lsp.enable("ols", true)
+				vim.lsp.enable("ols", true)
+			end
 		end
 	},
 	-- {
