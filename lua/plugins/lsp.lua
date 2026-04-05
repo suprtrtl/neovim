@@ -264,9 +264,13 @@ return {
 				handlers = handlers,
 				init_options = {
 					collections = {
-						{ name = "core", path = "/nix/store/*-odin-*/share/core" },
+						{ name = "core",   path = "/nix/store/*-odin-*/share/core" },
 						{ name = "vendor", path = "/nix/store/*-odin-*/share/vendor" },
 					},
+					enable_document_symbols = true,
+					enable_hover = true,
+					enable_snippets = true,
+					enable_semantic_tokens = false,
 				},
 			})
 
