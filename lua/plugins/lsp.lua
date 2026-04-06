@@ -267,8 +267,10 @@ return {
 					handlers = handlers,
 					init_options = {
 						collections = {
+							{ name = "base",   path = odin_dir .. "/share/base" },
 							{ name = "core",   path = odin_dir .. "/share/core" },
 							{ name = "vendor", path = odin_dir .. "/share/vendor" },
+							{ name = "shared", path = odin_dir .. "/share/shared" },
 						},
 						enable_document_symbols = true,
 						enable_hover = true,
