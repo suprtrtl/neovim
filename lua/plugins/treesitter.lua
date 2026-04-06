@@ -20,6 +20,7 @@ return {
 				"markdown_inline",
 				"latex",
 				"typst",
+				"odin",
 			},
 			sync_install = false,
 			auto_install = true,
