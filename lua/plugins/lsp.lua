@@ -280,6 +280,13 @@ return {
 				})
 
 				vim.lsp.enable("ols", true)
+
+				vim.lsp.config("gdscript", {
+					on_attach = on_attach,
+					capabilities = capabilities,
+					handlers = handlers,
+				})
+				vim.lsp.enable("gdscript", true)
 			end
 		end
 	},
