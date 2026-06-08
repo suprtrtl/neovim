@@ -30,39 +30,6 @@ return {
 			-- })
 
 
-			-- Specify how the border looks like
-			local border = {
-				{ '┌', 'FloatBorder' },
-				{ '─', 'FloatBorder' },
-				{ '┐', 'FloatBorder' },
-				{ '│', 'FloatBorder' },
-				{ '┘', 'FloatBorder' },
-				{ '─', 'FloatBorder' },
-				{ '└', 'FloatBorder' },
-				{ '│', 'FloatBorder' },
-			}
-
-			local handlers = {
-				['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
-				['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
-			}
-
-			vim.diagnostic.enable = true
-			vim.diagnostic.config {
-				virtual_text = {
-					prefix = "●",
-				},
-				float = { border = border },
-				signs = {
-					text = {
-						[vim.diagnostic.severity.ERROR] = " ",
-						[vim.diagnostic.severity.WARN] = " ",
-						[vim.diagnostic.severity.HINT] = "󰌵 ",
-						[vim.diagnostic.severity.INFO] = "󰋼 ",
-					},
-				},
-			}
-
 			local on_attach = function(client, bufnr)
 				local bufmap = function(keys, func, desc)
 					desc = desc or "todo"
