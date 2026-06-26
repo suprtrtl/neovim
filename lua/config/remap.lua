@@ -13,6 +13,9 @@ map('n', '<leader>fh', builtin.man_pages, { desc = "search help" })
 map('n', '<leader>fp', builtin.builtin, { desc = "search pickers" })
 map('n', '<leader>fP', builtin.planets, { desc = "search planets" })
 
+map('n', '<A-j>', ':cnext', { desc = "cnext" })
+map('n', '<A-J>', ':cprev', { desc = "cprev" })
+
 map('n', '<leader>pv', ':lua MiniFiles.open()<CR>', { desc = "open mini.files" })
 map('n', '<leader>e', ':lua MiniFiles.open()<CR>', { desc = "open mini.files" })
 map('n', '-', ':lua MiniFiles.open()<CR>', { desc = "open mini.files" })
