@@ -254,6 +254,12 @@ return {
 					handlers = handlers,
 				})
 				vim.lsp.enable("gdscript", true)
+
+				vim.lsp.config("ocamllsp", {
+					on_attach = on_attach,
+					capabilities = capabilities,
+				})
+				vim.lsp.enable("ocamllsp", true)
 			end
 		end
 	},
