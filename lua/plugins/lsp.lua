@@ -69,6 +69,8 @@ return {
 
 			capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
+			local handlers = {}
+
 			-- require('neodev'))()
 
 			vim.lsp.config("lua_ls", {
@@ -176,7 +178,6 @@ return {
 			vim.lsp.config("jdtls", {
 				on_attach = on_attach,
 				capabilities = capabilities,
-				handlers = handlers,
 				handlers = {
 					-- By assigning an empty function, you can remove the notifications
 					-- printed to the cmd
