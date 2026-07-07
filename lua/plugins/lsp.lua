@@ -24,22 +24,6 @@ return {
 				},
 			})
 
-			-- Set global root markers for all LSPs
-			vim.lsp.root_markers({
-				'.git',
-				'flake.nix',
-				'flake.lock',
-				'package.json',
-				'Cargo.toml',
-				'go.mod',
-				'pyproject.toml',
-				'.clang-format',
-				'tsconfig.json',
-				'build.gradle',
-				'pom.xml',
-				'Makefile',
-			})
-
 			-- require("inlay-hints").setup({
 			-- 	commands = { enable = true }, -- Enable commands: InlayHintsToggle, InlayHintsEnable, InlayHintsDisable
 			-- 	autocmd = { enable = true }, -- Auto-enable inlay hints on LspAttach
