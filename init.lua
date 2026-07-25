@@ -1,11 +1,12 @@
-require('config.lazy')
-
 require('config.opts')
-require('config.remap')
 require('config.autocmd')
 require('config.diagnostic')
--- require('config.lsp')
 
-require('config.theme')
+require('config.load_plugins')
+require('config.remap')
+
+require('config.lsp')
 
 
+vim.pack.add('https://github.com/olimorris/onedarkpro.nvim')
+vim.cmd('colorscheme onedark')

@@ -1,8 +1,7 @@
-return {
-	'nvim-telescope/telescope.nvim',
-	dependencies = { 'nvim-lua/plenary.nvim' },
-	config = function ()
-		telescope = require('telescope')
-		telescope.load_extension("fidget")
-	end
-}
+vim.pack.add({
+	'https://github.com/nvim-telescope/telescope.nvim',
+	'https://github.com/nvim-lua/plenary.nvim'
+})
+
+telescope = require('telescope')
+telescope.load_extension("fidget")
