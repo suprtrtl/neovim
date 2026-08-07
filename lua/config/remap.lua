@@ -1,5 +1,3 @@
-vim.g.truemapleader = ' '
-
 local map = vim.keymap.set
 
 map({ 'n', 'v', 'x' }, '<leader>s', ':e #<CR>', { desc = "switch windows" })

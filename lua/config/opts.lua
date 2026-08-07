@@ -30,4 +30,8 @@ vim.o.foldminlines = 128;
 vim.o.undofile = true
 vim.o.swapfile = false
 
+vim.o.cmdheight = 1
+
 vim.cmd.filetype("plugin indent on")
+
+vim.o.packlockfile = '$HOME/neovim/nvim-pack-lock.json'

@@ -1,9 +1,10 @@
 vim.pack.add({
 	'https://github.com/nvim-lualine/lualine.nvim',
-	'https://github.com/echasnovski/mini.icons'
+	'https://github.com/echasnovski/mini.icons',
+	'https://github.com/folke/noice.nvim',
 })
 
-lualine = require('lualine')
+local lualine = require('lualine')
 
 lualine.setup({
 	options = {

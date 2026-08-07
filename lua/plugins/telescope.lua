@@ -3,5 +3,4 @@ vim.pack.add({
 	'https://github.com/nvim-lua/plenary.nvim'
 })
 
-telescope = require('telescope')
-telescope.load_extension("fidget")
+local telescope = require('telescope')

@@ -1,3 +1,6 @@
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
 require('config.opts')
 require('config.autocmd')
 require('config.diagnostic')
@@ -8,5 +11,5 @@ require('config.remap')
 require('config.lsp')
 
 
-vim.pack.add('https://github.com/olimorris/onedarkpro.nvim')
+vim.pack.add({ 'https://github.com/olimorris/onedarkpro.nvim' })
 vim.cmd('colorscheme onedark')

@@ -1,10 +1,9 @@
-vim.pack.add('folke/snacks.nvim')
+vim.pack.add({'https://github.com/folke/snacks.nvim'})
 
-snacks = require('snacks')
+local snacks = require('snacks')
 
 snacks.setup({
 	bigfile = { enabled = true },
-	dashboard = { enabled = true },
 	explorer = { enabled = false },
 	indent = { enabled = true },
 	image = {

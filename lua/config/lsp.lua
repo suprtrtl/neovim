@@ -101,25 +101,24 @@ vim.lsp.config("hyprls", {
 })
 vim.lsp.enable("hyprls", true)
 
--- vim.lsp.config.rust_analyzer) {
--- 	on_attach = on_attach,
--- 	capabilities = capabilities,
--- handlers = handlers,
--- 	settings = {
--- 		['rust-analyzer'] = {
--- 			cargo = {
--- 				loadOutDirsFromCheck = true,
--- 				runBuildScripts = true,
--- 			},
--- 			procMacro = {
--- 				enable = true,
--- 			},
--- 			checkOnSave = {
--- 				command = 'check'
--- 			}
--- 		}
--- 	}
--- }
+vim.lsp.config("rust_analyzer", {
+	on_attach = on_attach,
+	capabilities = capabilities,
+	handlers = handlers,
+	settings = {
+		['rust-analyzer'] = {
+			cargo = {
+				loadOutDirsFromCheck = true,
+				runBuildScripts = true,
+			},
+			procMacro = {
+				enable = true,
+			},
+			checkOnSave = true,
+		}
+	}
+})
+vim.lsp.enable("rust_analyzer", true)
 
 local inlayHints = {
 	includeInlayParameterNameHints = "all",
@@ -251,4 +250,10 @@ if odin_dir ~= nil then
 		capabilities = capabilities,
 	})
 	vim.lsp.enable("ocamllsp", true)
+
+	vim.lsp.config("asm_lsp", {
+		on_attach = on_attach,
+		capabilities = capabilities,
+	})
+	vim.lsp.enable("asm_lsp", true)
 end

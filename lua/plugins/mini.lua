@@ -1,7 +1,6 @@
-vim.pack.add('https://github.com/echasnovski/mini.nvim')
+vim.pack.add({ 'https://github.com/echasnovski/mini.nvim' })
 
 require('mini.ai').setup()
-require('mini.notify').setup()
 require('mini.extra').setup()
 require('mini.surround').setup()
 require('mini.clue').setup {
